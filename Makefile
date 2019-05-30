@@ -22,4 +22,4 @@ build:
 	$(NODE_BINS)/webpack --config ./webpack.config.js --env=$(env)
 
 page:
-	node ./pug.js ./src/index.pug ./index.html
+	node ./pug.js ./src/index.pug ./docs/index.html

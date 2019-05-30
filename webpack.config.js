@@ -7,7 +7,7 @@ module.exports = env => ({
     target: 'web',
     entry: ['@babel/polyfill', path.join(__dirname, 'src', 'index.ts')],
     output: {
-        path: path.join(__dirname, 'lib'),
+        path: path.join(__dirname, 'docs'),
         filename: 'electron-rpc-wiki.js',
     },
     context: __dirname,
