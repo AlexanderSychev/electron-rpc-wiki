@@ -6,7 +6,7 @@
     "main": "dist/index.js",
     "license": "MIT",
     "scripts": {
-        "start": "static-server -p 8000"
+        "start": "static-server -p 8000 ./docs"
     },
     "devDependencies": {
         "@babel/core": "7.0.0",

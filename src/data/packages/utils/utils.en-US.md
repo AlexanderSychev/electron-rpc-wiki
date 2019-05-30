@@ -121,4 +121,4 @@ _Arguments_
 | ---------- | ---------- | -------------------------- |
 | `envelope` | `Envelope` | Common envelope data       |
 | `args`     | `any[]`    | Remote procedure arguments |
-| `error`    | `string`   | Remote procedure result    |
+| `error`    | `string`   | Remote procedure error     |

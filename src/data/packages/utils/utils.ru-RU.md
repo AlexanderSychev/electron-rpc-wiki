@@ -17,9 +17,9 @@ yarn add electron-rpc-utils --save
 
 ##### Аргументы
 
-| Имя     | Тип   | Описание       |
-| ------- | ----- | -------------- |
-| `value` | `any` | Value to check |
+| Имя     | Тип   | Описание             |
+| ------- | ----- | -------------------- |
+| `value` | `any` | Проверяемое значение |
 
 ##### Возвращает
 
@@ -105,11 +105,11 @@ _Аргументы_
 
 _Аргументы_
 
-| Name       | Type       | Description                |
-| ---------- | ---------- | -------------------------- |
-| `envelope` | `Envelope` | Common envelope data       |
-| `args`     | `any[]`    | Remote procedure arguments |
-| `response` | `any`      | Remote procedure result    |
+| Имя        | Тип        | Описание                      |
+| ---------- | ---------- | ----------------------------- |
+| `envelope` | `Envelope` | Общие данные конверта         |
+| `args`     | `any[]`    | Аргументы удаленной процедуры |
+| `response` | `any`      | Результат удаленной процедуры |
 
 ###### `protected logError(envelope: Envelope, args: any[], error: string): void`
 
@@ -117,8 +117,8 @@ _Аргументы_
 
 _Аргументы_
 
-| Name       | Type       | Description                |
-| ---------- | ---------- | -------------------------- |
-| `envelope` | `Envelope` | Common envelope data       |
-| `args`     | `any[]`    | Remote procedure arguments |
-| `error`    | `string`   | Remote procedure result    |
+| Имя        | Тип        | Описание                      |
+| ---------- | ---------- | ----------------------------- |
+| `envelope` | `Envelope` | Общие данные конверта         |
+| `args`     | `any[]`    | Аргументы удаленной процедуры |
+| `error`    | `string`   | Ошибка удаленной процедуры    |
