@@ -1,6 +1,7 @@
 ## ElectronRPC Utils
 
 ### What is that?
+
 This is a packages with common utility functions and classes for all ElectronRPC packages
 
 ### Installation
@@ -17,7 +18,7 @@ yarn add electron-rpc-utils --save
 ##### Arguments
 
 | Name    | Type  | Description    |
-|---------|-------|----------------|
+| ------- | ----- | -------------- |
 | `value` | `any` | Value to check |
 
 ##### Returns
@@ -29,7 +30,7 @@ yarn add electron-rpc-utils --save
 ##### Arguments
 
 | Name     | Type                                               | Is required | Description                  |
-|----------|----------------------------------------------------|-------------|------------------------------|
+| -------- | -------------------------------------------------- | ----------- | ---------------------------- |
 | `params` | `ChannelsNamesParameters` or `null` or `undefined` | No          | Parameters object to resolve |
 
 ##### Returns
@@ -64,7 +65,7 @@ Add request logging function. To remove existing logging function use `null` as 
 _Arguments_
 
 | Name            | Type                               | Description                |
-|-----------------|------------------------------------|----------------------------|
+| --------------- | ---------------------------------- | -------------------------- |
 | `requestLogger` | `RequestLoggingFunction` or `null` | Logging function or `null` |
 
 ###### `public setSuccessLogger(requestLogger: RequestLoggingFunction | null): void`
@@ -74,7 +75,7 @@ Add success logging function. To remove existing logging function use `null` as 
 _Arguments_
 
 | Name            | Type                               | Description                |
-|-----------------|------------------------------------|----------------------------|
+| --------------- | ---------------------------------- | -------------------------- |
 | `successLogger` | `SuccessLoggingFunction` or `null` | Logging function or `null` |
 
 ###### `public setErrorLogger(errorLogger: RequestLoggingFunction | null): void`
@@ -84,7 +85,7 @@ Add error logging function. To remove existing logging function use `null` as ar
 _Arguments_
 
 | Name          | Type                             | Description                |
-|---------------|----------------------------------|----------------------------|
+| ------------- | -------------------------------- | -------------------------- |
 | `errorLogger` | `ErrorLoggingFunction` or `null` | Logging function or `null` |
 
 ###### `protected logRequest(envelope: Envelope, args: any[]): void`
@@ -94,7 +95,7 @@ Log request (if logger function not defined will do nothing).
 _Arguments_
 
 | Name       | Type       | Description                |
-|------------|------------|----------------------------|
+| ---------- | ---------- | -------------------------- |
 | `envelope` | `Envelope` | Common envelope data       |
 | `args`     | `any[]`    | Remote procedure arguments |
 
@@ -105,7 +106,7 @@ Log success (if logger function not defined will do nothing).
 _Arguments_
 
 | Name       | Type       | Description                |
-|------------|------------|----------------------------|
+| ---------- | ---------- | -------------------------- |
 | `envelope` | `Envelope` | Common envelope data       |
 | `args`     | `any[]`    | Remote procedure arguments |
 | `response` | `any`      | Remote procedure result    |
@@ -117,7 +118,7 @@ Log error (if logger function not defined will do nothing).
 _Arguments_
 
 | Name       | Type       | Description                |
-|------------|------------|----------------------------|
+| ---------- | ---------- | -------------------------- |
 | `envelope` | `Envelope` | Common envelope data       |
 | `args`     | `any[]`    | Remote procedure arguments |
 | `error`    | `string`   | Remote procedure result    |
