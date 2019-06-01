@@ -52,6 +52,10 @@ module.exports = env => ({
                 loader: 'url-loader',
             },
             {
+                test: /\.png$/,
+                loader: 'url-loader',
+            },
+            {
                 test: /\.md$/,
                 loader: 'raw-loader',
             },

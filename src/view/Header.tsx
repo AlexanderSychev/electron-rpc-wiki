@@ -3,6 +3,7 @@ import { style } from 'typestyle';
 import { NavLink } from 'react-router-dom';
 
 import LocaleSelector from '@view/LocaleSelector';
+import Logo from '@view/Logo';
 
 const styles = {
     root: style({
@@ -23,11 +24,13 @@ const styles = {
         fontSize: '36px',
         fontWeight: 'bold',
         fontFamily: 'Roboto',
-    }),
-    titleLink: style({
-        textDecoration: 'none',
-        display: 'inline-block',
-        color: '#000',
+        height: '48px',
+        lineHeight: '48px',
+        $nest: {
+            a: {
+                textDecoration: 'none',
+            },
+        },
     }),
 };
 
@@ -35,8 +38,8 @@ const Header: React.FunctionComponent = () => {
     return (
         <header className={styles.root}>
             <h1 className={styles.title}>
-                <NavLink to="/" className={styles.titleLink}>
-                    ElectronRPC
+                <NavLink to="/">
+                    <Logo />
                 </NavLink>
             </h1>
             <LocaleSelector />

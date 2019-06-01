@@ -1,5 +1,3 @@
-# ElectronRPC
-
 Libraries, which provides remote procedure call (RPC) by inter-process communication (IPC) of Electron.
 
 ## Installation

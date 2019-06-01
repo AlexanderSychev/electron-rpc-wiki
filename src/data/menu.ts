@@ -20,7 +20,6 @@ const menu: MenuItem[] = [
     {
         name: new Map<Locale, string>([[Locale.en_US, 'Packages'], [Locale.ru_RU, 'Пакеты']]),
         to: '/packages',
-        exact: true,
         subItems: mapPackageItems([
             'electron-rpc-types',
             'electron-rpc-async-queue',

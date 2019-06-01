@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import MainPage from '@view/MainPage';
 import NotFoundPage from '@view/NotFoundPage';
 import PackagePage from '@view/PackagePage';
+import favicon from '@icons/favicon.png';
 import { LocaleContext, Locale, LocaleContextData, getLocale, setLocale as setLocaleOrigin } from '@locale';
 
 const useBehavior = (): LocaleContextData => {
@@ -22,6 +24,9 @@ const useBehavior = (): LocaleContextData => {
 /** Application main component */
 const App: React.FunctionComponent = () => (
     <LocaleContext.Provider value={useBehavior()}>
+        <Helmet>
+            <link rel="icon" type="image/svg+xml" href={favicon} />
+        </Helmet>
         <HashRouter>
             <Switch>
                 <Route path="/" component={MainPage} exact />

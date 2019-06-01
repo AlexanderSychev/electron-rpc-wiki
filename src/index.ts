@@ -9,13 +9,13 @@ const loadGlobalStyles = (): void => {
         width: '100%',
         height: '100vh',
         fontFamily: 'Open Sans',
-        overflowX: 'hidden',
-        overflowY: 'auto',
+        overflow: 'hidden',
         backgroundColor: '#f4f4f4',
     });
-    cssRule('body', {
+    cssRule('body, #root', {
         width: '100%',
-        minHeight: '100vh',
+        height: '100%',
+        overflow: 'hidden',
     });
 };
 
