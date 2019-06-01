@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 
 import LocaleSelector from '@view/LocaleSelector';
 import Logo from '@view/Logo';
+import VersionSelector from '@view/VersionSelector';
+import MenuExpander from '@view/MenuExpander';
 
 const styles = {
     root: style({
@@ -17,8 +19,9 @@ const styles = {
         top: 0,
         left: 0,
         width: '100%',
-        padding: '0 32px',
+        paddingRight: '32px',
         boxSizing: 'border-box',
+        zIndex: 2,
     }),
     title: style({
         fontSize: '36px',
@@ -26,22 +29,32 @@ const styles = {
         fontFamily: 'Roboto',
         height: '48px',
         lineHeight: '48px',
+        marginRight: '30px',
         $nest: {
             a: {
                 textDecoration: 'none',
             },
         },
     }),
+    leftWrap: style({
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    }),
 };
 
 const Header: React.FunctionComponent = () => {
     return (
         <header className={styles.root}>
-            <h1 className={styles.title}>
-                <NavLink to="/">
-                    <Logo />
-                </NavLink>
-            </h1>
+            <div className={styles.leftWrap}>
+                <MenuExpander />
+                <h1 className={styles.title}>
+                    <NavLink to="/">
+                        <Logo />
+                    </NavLink>
+                </h1>
+                <VersionSelector />
+            </div>
             <LocaleSelector />
         </header>
     );

@@ -1,4 +1,4 @@
-import { Locale } from './Locale';
+import { Locale } from './types';
 
 const STORAGE_KEY = 'locale';
 

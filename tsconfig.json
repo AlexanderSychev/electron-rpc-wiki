@@ -20,10 +20,10 @@
         "paths": {
             "@data": ["data/"],
             "@data/*": ["data/*"],
+            "@context": ["context/"],
+            "@context/*": ["context/*"],
             "@view": ["view/"],
             "@view/*": ["view/*"],
-            "@locale": ["locale/"],
-            "@locale/*": ["locale/*"],
             "@icons/*": ["icon/*"]
         }
     }

@@ -1,4 +1,4 @@
-import { Locale } from '@locale';
+import { Locale } from '@context';
 
 const notFoundPage = {
     title: new Map<Locale, string>([[Locale.en_US, 'Page not found'], [Locale.ru_RU, 'Страница не найдена']]),

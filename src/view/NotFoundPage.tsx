@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 
-import { LocaleContext } from '@locale';
-import Page from '@view/Page';
+import { AppContext } from '@context';
 import notFoundPage from '@data/notFoundPage';
 
 const styles = {
@@ -20,16 +19,16 @@ const styles = {
 
 /** Standard 404 page */
 const NotFoundPage: React.FunctionComponent = () => {
-    const { locale } = React.useContext(LocaleContext);
+    const { locale } = React.useContext(AppContext);
     return (
-        <Page>
+        <React.Fragment>
             <div className={styles.wrap}>
                 <section className={styles.root}>
                     <h1>{notFoundPage.title.get(locale)}</h1>
                     <p>{notFoundPage.message.get(locale)}</p>
                 </section>
             </div>
-        </Page>
+        </React.Fragment>
     );
 };
 

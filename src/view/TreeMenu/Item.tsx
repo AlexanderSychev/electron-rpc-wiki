@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { style } from 'typestyle';
 
 import Arrow from './Arrow';
-import { LocaleContext, Locale } from '@locale';
+import { AppContext, Locale } from '@context';
 import { MenuItem } from '@data';
 
 export interface ItemProps extends MenuItem {
@@ -30,6 +30,7 @@ const childStyles = {
         marginRight: '8px',
     }),
     iconOpenedClassName: style({
+        transform: 'rotate(90deg)',
         transition: `transform .25s ease-out`,
     }),
     subs: style({
@@ -61,7 +62,7 @@ const styles = {
                 backgroundColor: '#f4f4f4',
             },
             [`&:hover .${childStyles.iconOpenedClassName}`]: {
-                transform: 'rotate(90deg)',
+                transform: 'rotate(0deg)',
             },
             [`&:hover .${childStyles.arrow}`]: {
                 backgroundColor: '#d0d0d0',
@@ -73,7 +74,7 @@ const styles = {
         color: '#008c00',
         $nest: {
             [`& .${childStyles.iconOpenedClassName}`]: {
-                transform: 'rotate(90deg)',
+                transform: 'rotate(0deg)',
             },
             [`& + .${childStyles.subs}`]: {
                 height: 'auto',
@@ -100,7 +101,7 @@ const useBehavior = (level: number, name: Map<Locale, string>): Behavior => {
         [isExpanded],
     );
 
-    const { locale } = React.useContext(LocaleContext);
+    const { locale } = React.useContext(AppContext);
     const label = React.useMemo(() => name.get(locale), [locale, name]);
     const rootStyle = React.useMemo(() => calcRootStyle(level), [level]);
 

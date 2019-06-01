@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
 
-import Page from '@view/Page';
 import Markdown from '@view/Markdown';
 import NotFoundPage from '@view/NotFoundPage';
 import packages from '@data/packages';
 import { Article } from '@data/types';
-import { LocaleContext } from '@locale';
+import { AppContext } from '@context';
 import useTitle from '@view/useTitle';
 
 interface RouteData {
@@ -14,7 +13,7 @@ interface RouteData {
 }
 
 const useBehavior = (packageName: string): string | undefined => {
-    const { locale } = React.useContext(LocaleContext);
+    const { locale } = React.useContext(AppContext);
     const article: Article | undefined = React.useMemo(() => packages.get(packageName), [packageName]);
     const title: string | undefined = React.useMemo(() => (article ? article.name.get(locale) : undefined), [
         article,
@@ -35,13 +34,7 @@ const PackagePage: React.FunctionComponent<RouteComponentProps<RouteData>> = ({
     },
 }) => {
     const source = useBehavior(packageName);
-    return source ? (
-        <Page>
-            <Markdown source={source} />
-        </Page>
-    ) : (
-        <NotFoundPage />
-    );
+    return source ? <Markdown source={source} /> : <NotFoundPage />;
 };
 
 PackagePage.displayName = `PackagePage from "${__filename}"`;

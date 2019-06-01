@@ -66,7 +66,7 @@ module.exports = env => ({
         alias: {
             '@data': path.join(__dirname, 'src/data/'),
             '@view': path.join(__dirname, 'src/view/'),
-            '@locale': path.join(__dirname, 'src/locale/'),
+            '@context': path.join(__dirname, 'src/context/'),
             '@icons': path.join(__dirname, 'src/icons'),
         },
     },

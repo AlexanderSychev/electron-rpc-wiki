@@ -1,4 +1,4 @@
-import { Locale } from '@locale';
+import { Locale } from '@context';
 import { Article } from '@data/types';
 import typesEnUs from './types.en-US.md';
 import typesRuRu from './types.ru-RU.md';

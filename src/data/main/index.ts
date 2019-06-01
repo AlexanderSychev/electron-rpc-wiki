@@ -1,4 +1,4 @@
-import { Locale } from '@locale';
+import { Locale } from '@context';
 
 import mainEnUs from './main.en-US.md';
 import mainRuRu from './main.ru-RU.md';

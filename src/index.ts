@@ -29,6 +29,7 @@ const onLoad = () => {
     if (root) {
         renderApp(root);
     }
+    window.removeEventListener('load', onLoad);
 };
 
 window.addEventListener('load', onLoad);

@@ -1,4 +1,4 @@
-import { Locale } from '@locale';
+import { Locale } from '@context';
 import { Article } from '@data/types';
 import asyncQueueEnUs from './async-queue.en-US.md';
 import asyncQueueRuRu from './async-queue.ru-RU.md';

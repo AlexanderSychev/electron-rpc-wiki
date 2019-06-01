@@ -1,4 +1,4 @@
-import { Locale } from '@locale';
+import { Locale } from '@context';
 import { MenuItem } from './types';
 
 const mapPackageItem = (packageName: string): MenuItem => ({

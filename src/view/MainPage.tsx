@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 
-import Page from '@view/Page';
 import Markdown from '@view/Markdown';
 import Logo from '@view/Logo';
 import { main } from '@data/main';
-import { LocaleContext } from '@locale';
+import { AppContext } from '@context';
 
 const styles = {
     logo: style({
@@ -15,12 +14,12 @@ const styles = {
 };
 
 const MainPage: React.FunctionComponent = () => {
-    const { locale } = React.useContext(LocaleContext);
+    const { locale } = React.useContext(AppContext);
     return (
-        <Page>
+        <React.Fragment>
             <Logo className={styles.logo} />
             <Markdown source={main.content.get(locale)} />
-        </Page>
+        </React.Fragment>
     );
 };
 
