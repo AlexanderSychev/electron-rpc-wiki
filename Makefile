@@ -6,8 +6,8 @@ NODE_BINS = $(NODE_MODULES_TOP)/.bin
 all: clean comb lint types build page
 
 clean:
-	rm -rf ./docs
-	mkdir ./docs
+	rm ./docs/electron-rpc-wiki.js
+	rm ./docs/index.html
 
 comb:
 	$(NODE_BINS)/prettier --write "./**/*.{js,ts,tsx,json,graphql,md,*rc}"

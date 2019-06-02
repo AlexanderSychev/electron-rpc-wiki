@@ -8,6 +8,15 @@ export interface Article {
     content: Map<Locale, string>;
 }
 
+export interface LoadedArticle {
+    name: string;
+    content: string;
+}
+
+export interface NameDictionary {
+    [locale: string]: string;
+}
+
 /** Menu item signature */
 export interface MenuItem {
     /** Name variants by locales */

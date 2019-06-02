@@ -1,4 +1,3 @@
-export * from './main';
 export { Article, MenuItem } from './types';
 
 import menu from './menu';
@@ -12,3 +11,6 @@ export { packages };
 
 import dictionary from './dictionary';
 export { dictionary };
+
+import ArticleLoader from './ArticleLoader';
+export { ArticleLoader };

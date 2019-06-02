@@ -3,8 +3,8 @@ import { style } from 'typestyle';
 
 import Markdown from '@view/Markdown';
 import Logo from '@view/Logo';
-import { main } from '@data/main';
-import { AppContext } from '@context';
+import PagePreloader from '@view/PagePreloader';
+import useArticle from '@view/useArticle';
 
 const styles = {
     logo: style({
@@ -14,11 +14,13 @@ const styles = {
 };
 
 const MainPage: React.FunctionComponent = () => {
-    const { locale } = React.useContext(AppContext);
-    return (
+    const { isLoading, content } = useArticle('/');
+    return isLoading ? (
+        <PagePreloader />
+    ) : (
         <React.Fragment>
             <Logo className={styles.logo} />
-            <Markdown source={main.content.get(locale)} />
+            <Markdown source={content} />
         </React.Fragment>
     );
 };
