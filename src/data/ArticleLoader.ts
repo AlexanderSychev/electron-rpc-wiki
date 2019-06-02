@@ -37,10 +37,11 @@ export default class ArticleLoader {
     }
 
     public async load(url: string, version: string, locale: Locale): Promise<LoadedArticle> {
-        const key = ArticleLoader.fixUrl(url, version);
+        const fixedUrl = ArticleLoader.fixUrl(url, version);
+        const key = `${locale}::${fixedUrl}`;
         if (!this.cache.has(key)) {
-            const markdownUrl = `${key}.${locale}.md`;
-            const jsonUrl = `${key}.json`;
+            const markdownUrl = `${fixedUrl}.${locale}.md`;
+            const jsonUrl = `${fixedUrl}.json`;
             const [{ data: content }, { data: dictionary }] = await Promise.all([
                 await this.sender.get<string>(markdownUrl),
                 await this.sender.get<NameDictionary>(jsonUrl),

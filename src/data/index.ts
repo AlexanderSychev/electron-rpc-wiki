@@ -6,9 +6,6 @@ export { menu };
 import notFoundPage from './notFoundPage';
 export { notFoundPage };
 
-import packages from './packages';
-export { packages };
-
 import dictionary from './dictionary';
 export { dictionary };
 
