@@ -71,8 +71,11 @@ module.exports = env => ({
         },
     },
     externals: {
+        classnames: 'classNames',
         react: 'React',
+        typestyle: 'typestyle',
         'react-dom': 'ReactDOM',
         'react-markdown': 'ReactMarkdown',
+        'react-router': 'ReactRouter',
     },
 });

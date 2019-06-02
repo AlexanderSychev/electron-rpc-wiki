@@ -10,7 +10,7 @@ const styles = {
         backgroundColor: '#fff',
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.1)',
         boxSizing: 'border-box',
-        padding: '62px 32px 48px',
+        padding: '14px 32px 48px',
         overflowX: 'hidden',
         overflowY: 'auto',
     }),

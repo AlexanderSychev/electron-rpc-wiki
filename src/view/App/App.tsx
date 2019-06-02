@@ -12,11 +12,11 @@ import useBehavior from './useBehavior';
 
 /** Application main component */
 const App: React.FunctionComponent = () => (
-    <AppContext.Provider value={useBehavior()}>
-        <Helmet>
-            <link rel="icon" type="image/svg+xml" href={favicon} />
-        </Helmet>
-        <HashRouter>
+    <HashRouter>
+        <AppContext.Provider value={useBehavior()}>
+            <Helmet>
+                <link rel="icon" type="image/svg+xml" href={favicon} />
+            </Helmet>
             <Page>
                 <Switch>
                     <Route path="/" component={MainPage} exact />
@@ -25,8 +25,8 @@ const App: React.FunctionComponent = () => (
                     <Route component={NotFoundPage} />
                 </Switch>
             </Page>
-        </HashRouter>
-    </AppContext.Provider>
+        </AppContext.Provider>
+    </HashRouter>
 );
 
 App.displayName = `App from "${__filename}"`;

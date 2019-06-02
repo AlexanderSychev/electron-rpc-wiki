@@ -41,6 +41,12 @@ const styles = {
         justifyContent: 'flex-start',
         alignItems: 'center',
     }),
+    expanderDelimeter: style({
+        width: '2px',
+        backgroundColor: '#d0d0d0',
+        height: '42px',
+        marginRight: '8px',
+    }),
 };
 
 const Header: React.FunctionComponent = () => {
@@ -48,6 +54,7 @@ const Header: React.FunctionComponent = () => {
         <header className={styles.root}>
             <div className={styles.leftWrap}>
                 <MenuExpander />
+                <div className={styles.expanderDelimeter} />
                 <h1 className={styles.title}>
                     <NavLink to="/">
                         <Logo />

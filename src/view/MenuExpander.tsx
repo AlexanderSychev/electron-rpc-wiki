@@ -15,6 +15,7 @@ const styles = {
         $nest: {
             '&:hover': {
                 cursor: 'pointer',
+                backgroundColor: '#f4f4f4',
             },
         },
     }),
