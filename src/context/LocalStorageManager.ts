@@ -22,6 +22,10 @@ export default class LocalStorageManager {
         return Object.keys(Locale).some(key => Locale[<any>key] === locale);
     }
 
+    private static isAvailableVersion(version: string): boolean {
+        return Versions.includes(version);
+    }
+
     @autobind
     public getLocale(): Locale {
         return this.getItem<Locale>(
@@ -39,7 +43,12 @@ export default class LocalStorageManager {
 
     @autobind
     public getVersion(): string {
-        return this.getItem(LocalStorageManager.VERSION_KEY, Versions[0], Versions[0]);
+        return this.getItem(
+            LocalStorageManager.VERSION_KEY,
+            Versions[0],
+            Versions[0],
+            LocalStorageManager.isAvailableVersion,
+        );
     }
 
     @autobind
@@ -56,6 +65,9 @@ export default class LocalStorageManager {
         let value: I | null = <I | null>localStorage.getItem(key);
         if (!value) {
             value = isAvailable(initialValue) ? initialValue : defaultValue;
+            localStorage.setItem(key, value);
+        } else if (!isAvailable(value)) {
+            value = defaultValue;
             localStorage.setItem(key, value);
         }
         return value;
