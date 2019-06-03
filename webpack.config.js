@@ -51,14 +51,6 @@ module.exports = env => ({
                 test: /\.svg$/,
                 loader: 'url-loader',
             },
-            {
-                test: /\.png$/,
-                loader: 'url-loader',
-            },
-            {
-                test: /\.md$/,
-                loader: 'raw-loader',
-            },
         ],
     },
     resolve: {

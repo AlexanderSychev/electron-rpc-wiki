@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 import MainPage from '@view/MainPage';
 import NotFoundPage from '@view/NotFoundPage';
 import ApiPage from '@view/ApiPage';
-import favicon from '@icons/favicon.png';
 import Page from '@view/Page';
 import { AppContext } from '@context';
 import useBehavior from './useBehavior';
@@ -14,9 +12,6 @@ import useBehavior from './useBehavior';
 const App: React.FunctionComponent = () => (
     <HashRouter>
         <AppContext.Provider value={useBehavior()}>
-            <Helmet>
-                <link rel="icon" type="image/svg+xml" href={favicon} />
-            </Helmet>
             <Page>
                 <Switch>
                     <Route path="/" component={MainPage} exact />
