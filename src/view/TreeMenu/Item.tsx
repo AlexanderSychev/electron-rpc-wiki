@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { style } from 'typestyle';
 
 import Arrow from './Arrow';
-import { AppContext, Locale } from '@context';
-import { MenuItem } from '@data';
+import { AppContext } from '@context';
+import { MenuItem, NameDictionary } from '@data';
 
 export interface ItemProps extends MenuItem {
     level: number;
@@ -90,7 +90,7 @@ interface Behavior {
     onSwitchExpand: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const useBehavior = (level: number, name: Map<Locale, string>): Behavior => {
+const useBehavior = (level: number, name: NameDictionary | string): Behavior => {
     const [isExpanded, setIsExpanded] = React.useState(false);
 
     const onSwitchExpand: React.MouseEventHandler<HTMLDivElement> = React.useCallback(
@@ -102,7 +102,7 @@ const useBehavior = (level: number, name: Map<Locale, string>): Behavior => {
     );
 
     const { locale } = React.useContext(AppContext);
-    const label = React.useMemo(() => name.get(locale), [locale, name]);
+    const label = React.useMemo(() => (typeof name === 'string' ? name : name[locale]), [locale, name]);
     const rootStyle = React.useMemo(() => calcRootStyle(level), [level]);
 
     return { isExpanded, label, rootStyle, onSwitchExpand };

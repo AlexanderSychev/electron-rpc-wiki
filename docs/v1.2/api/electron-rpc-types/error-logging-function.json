@@ -1,0 +1,4 @@
+{
+    "name": "interface ErrorLoggingFunction",
+    "to": "./error-logging-function"
+}

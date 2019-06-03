@@ -1,0 +1,20 @@
+{
+    "to": "./",
+    "name": {
+        "en-US": "Package \"electron-rpc-types\"",
+        "ru-RU": "Пакет \"electron-rpc-types\""
+    },
+    "subItems": [
+        "./resolver.json",
+        "./rpc-channel-default-names.json",
+        "./envelope-type.json",
+        "./channels-names-parameters.json",
+        "./channels-names-properties.json",
+        "./envelope.json",
+        "./request.json",
+        "./response.json",
+        "./request-logging-function.json",
+        "./success-logging-function.json",
+        "./error-logging-function.json"
+    ]
+}

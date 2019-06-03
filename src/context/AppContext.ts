@@ -4,7 +4,7 @@ import { ContextData } from './types';
 import LocalStorageManager from './LocalStorageManager';
 
 export const AppContext = createContext<ContextData>({
-    isMenuExpanded: false,
+    isMenuExpanded: true,
     locale: LocalStorageManager.getInstance().getLocale(),
     version: LocalStorageManager.getInstance().getVersion(),
     setIsMenuExpanded: _ => void 0,

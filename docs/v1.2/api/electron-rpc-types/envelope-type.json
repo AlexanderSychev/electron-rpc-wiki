@@ -1,0 +1,4 @@
+{
+    "name": "const enum EnvelopeType",
+    "to": "./envelope-type"
+}

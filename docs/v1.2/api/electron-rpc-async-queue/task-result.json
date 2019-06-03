@@ -1,0 +1,4 @@
+{
+    "name": "interface TaskResult<A, R>",
+    "to": "./task-result"
+}

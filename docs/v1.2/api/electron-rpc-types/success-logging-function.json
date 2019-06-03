@@ -1,0 +1,4 @@
+{
+    "name": "interface SuccessLoggingFunction",
+    "to": "./success-logging-function"
+}

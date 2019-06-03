@@ -1,5 +1,3 @@
-import { desc } from 'semver-sort';
-
 /** Locale */
 export enum Locale {
     ru_RU = 'ru-RU',
@@ -7,7 +5,7 @@ export enum Locale {
 }
 
 /** Available versions */
-export const Versions: string[] = desc(['1.2.0', '1.1.0']);
+export const Versions: string[] = ['1.2', '1.1'];
 
 /** Common context data */
 export interface ContextData {

@@ -1,4 +1,4 @@
 node_modules/
-dist/
 .yarnrc
-lib/
+docs/electron-rpc-wiki.js
+docs/index.html

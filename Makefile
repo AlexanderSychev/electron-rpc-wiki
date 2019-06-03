@@ -1,13 +1,13 @@
 NODE_MODULES_TOP = ./node_modules
 NODE_BINS = $(NODE_MODULES_TOP)/.bin
 
-.PHONY: all clean comb lint types build page
+.PHONY: all clean comb lint types build page menu
 
-all: clean comb lint types build page
+all: clean comb lint types build page menu
 
 clean:
-	rm ./docs/electron-rpc-wiki.js
-	rm ./docs/index.html
+	rm -f ./docs/electron-rpc-wiki.js
+	rm -f ./docs/index.html
 
 comb:
 	$(NODE_BINS)/prettier --write "./**/*.{js,ts,tsx,json,graphql,md,*rc}"
@@ -23,3 +23,6 @@ build:
 
 page:
 	node ./pug.js ./src/index.pug ./docs/index.html
+
+menu:
+	node ./generateMenu.js

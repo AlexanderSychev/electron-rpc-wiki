@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import MainPage from '@view/MainPage';
 import NotFoundPage from '@view/NotFoundPage';
-import PackagePage from '@view/PackagePage';
+import ApiPage from '@view/ApiPage';
 import favicon from '@icons/favicon.png';
 import Page from '@view/Page';
 import { AppContext } from '@context';
@@ -20,8 +20,8 @@ const App: React.FunctionComponent = () => (
             <Page>
                 <Switch>
                     <Route path="/" component={MainPage} exact />
-                    <Redirect from="/packages" to="/packages/electron-rpc-types" exact />
-                    <Route path="/packages/:packageName" component={PackagePage} />
+                    <Redirect from="/api" to="/api/electron-rpc-types" exact />
+                    <Route path="/api/:sections+" component={ApiPage} />
                     <Route component={NotFoundPage} />
                 </Switch>
             </Page>

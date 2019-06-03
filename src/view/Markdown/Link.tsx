@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { style } from 'typestyle';
 
 export interface LinkProps {
@@ -16,11 +16,21 @@ const rootClass = style({
     },
 });
 
+const fixLink = (href: string) => {
+    let result = href.slice(1);
+
+    if (result.startsWith('./')) {
+        result = `${window.location.hash.slice(1)}/${result.slice(2)}`;
+    }
+
+    return result;
+};
+
 const Link: React.FunctionComponent<LinkProps> = ({ children, href }) =>
     href && href.startsWith('#') ? (
-        <NavLink className={rootClass} to={href.slice(1)}>
+        <ReactRouterLink className={rootClass} to={fixLink(href)}>
             {children}
-        </NavLink>
+        </ReactRouterLink>
     ) : (
         <a className={rootClass} href={href}>
             {children}

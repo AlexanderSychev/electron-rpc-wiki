@@ -1,14 +1,6 @@
 import { Locale } from '@context';
 
-/** Wiki article signature */
 export interface Article {
-    /** Name variants by locales */
-    name: Map<Locale, string>;
-    /** Content variants by locales */
-    content: Map<Locale, string>;
-}
-
-export interface LoadedArticle {
     name: string;
     content: string;
 }
@@ -19,8 +11,8 @@ export interface NameDictionary {
 
 /** Menu item signature */
 export interface MenuItem {
-    /** Name variants by locales */
-    name: Map<Locale, string>;
+    /** Name variants by locales or single name */
+    name: NameDictionary | string;
     /** Target URL */
     to: string;
     /** Strict URL checking */

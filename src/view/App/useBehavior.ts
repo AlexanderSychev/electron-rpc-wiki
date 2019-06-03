@@ -5,7 +5,7 @@ import { Locale, ContextData, LocalStorageManager } from '@context';
 const useBehavior = (): ContextData => {
     const [locale, setLocaleState] = React.useState<Locale>(LocalStorageManager.getInstance().getLocale);
     const [version, setVersionState] = React.useState<string>(LocalStorageManager.getInstance().getVersion);
-    const [isMenuExpanded, setIsMenuExpanded] = React.useState<boolean>(false);
+    const [isMenuExpanded, setIsMenuExpanded] = React.useState<boolean>(true);
     const setLocale = React.useCallback(
         (locale: Locale) => {
             setLocaleState(locale);

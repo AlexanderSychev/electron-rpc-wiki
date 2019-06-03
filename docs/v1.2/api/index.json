@@ -1,0 +1,8 @@
+{
+    "to": "./",
+    "name": {
+        "en-US": "API reference",
+        "ru-RU": "Справка API"
+    },
+    "subItems": ["./electron-rpc-async-queue", "./electron-rpc-types", "./electron-rpc-utils"]
+}

@@ -1,0 +1,8 @@
+{
+    "to": "./",
+    "exact": true,
+    "name": {
+        "en-US": "Home",
+        "ru-RU": "Главная"
+    }
+}

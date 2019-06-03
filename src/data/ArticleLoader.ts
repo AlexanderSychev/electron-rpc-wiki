@@ -1,27 +1,16 @@
-import axios, { AxiosInstance } from 'axios';
-import * as url from 'url';
-
+import Loader from './Loader';
 import { Locale } from '@context';
-import { LoadedArticle, NameDictionary } from './types';
+import { Article, MenuItem } from './types';
 
-export default class ArticleLoader {
+export default class ArticleLoader extends Loader {
     private static instance: ArticleLoader | null = null;
 
-    private cache: Map<string, LoadedArticle>;
-
-    private sender: AxiosInstance;
+    private cache: Map<string, Article>;
 
     private constructor() {
-        const { protocol, host, pathname = '/' } = url.parse(location.href);
-        this.sender = axios.create({
-            baseURL: url.format({
-                protocol,
-                host,
-                pathname,
-            }),
-        });
+        super();
 
-        this.cache = new Map<string, LoadedArticle>();
+        this.cache = new Map<string, Article>();
     }
 
     public static getInstance(): ArticleLoader {
@@ -32,25 +21,41 @@ export default class ArticleLoader {
     }
 
     private static fixUrl(srcUrl: string, version: string): string {
-        const fixedUrl: string = srcUrl.endsWith('/') ? `${srcUrl}index` : srcUrl;
+        const fixedUrl = srcUrl.endsWith('/') ? srcUrl.slice(0, srcUrl.length - 1) : srcUrl;
         return `v${version}/${fixedUrl}`.replace(/\/{2,}/g, '/');
     }
 
-    public async load(url: string, version: string, locale: Locale): Promise<LoadedArticle> {
+    public async load(url: string, version: string, locale: Locale): Promise<Article> {
         const fixedUrl = ArticleLoader.fixUrl(url, version);
         const key = `${locale}::${fixedUrl}`;
         if (!this.cache.has(key)) {
-            const markdownUrl = `${fixedUrl}.${locale}.md`;
-            const jsonUrl = `${fixedUrl}.json`;
-            const [{ data: content }, { data: dictionary }] = await Promise.all([
-                await this.sender.get<string>(markdownUrl),
-                await this.sender.get<NameDictionary>(jsonUrl),
+            const [content, name] = await Promise.all([
+                this.loadMarkdown(fixedUrl, locale),
+                this.loadName(fixedUrl, locale),
             ]);
-            this.cache.set(key, {
-                content,
-                name: dictionary[locale] || dictionary[Locale.en_US] || '',
-            });
+            this.cache.set(key, { content, name });
         }
         return this.cache.get(key)!;
+    }
+
+    private async loadMarkdown(url: string, locale: Locale): Promise<string> {
+        let result: string;
+        try {
+            result = (await this.sender.get<string>(`${url}.${locale}.md`)).data;
+        } catch (err) {
+            result = (await this.sender.get<string>(`${url}/index.${locale}.md`)).data;
+        }
+        return result;
+    }
+
+    private async loadName(url: string, locale: Locale): Promise<string> {
+        let item: MenuItem;
+        try {
+            item = (await this.sender.get<MenuItem>(`${url}.json`)).data;
+        } catch (err) {
+            item = (await this.sender.get<MenuItem>(`${url}/index.json`)).data;
+        }
+        const { name } = item;
+        return typeof name === 'string' ? name : name[locale] || name[Locale.en_US] || '';
     }
 }

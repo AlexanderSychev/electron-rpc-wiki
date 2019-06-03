@@ -1,41 +1,15 @@
 import * as React from 'react';
-import { style, keyframes } from 'typestyle';
+import { style } from 'typestyle';
 
-import logo from '@icons/logo.svg';
+import Preloader from '@view/Preloader';
 
-const styles = {
-    root: style({
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    }),
-    image: style({
-        width: '300px',
-        height: '300px',
-        animationDuration: '1s',
-        animationIterationCount: 'infinite',
-        animationName: keyframes({
-            '0%': {
-                transform: 'rotate(0deg)',
-            },
-            '50%': {
-                transform: 'rotate(180deg)',
-            },
-            '100%': {
-                transform: 'rotate(360deg)',
-            },
-        }),
-    }),
-};
+const imageClassName = style({
+    width: '300px',
+    height: '300px',
+});
 
-const PagePreloader: React.FunctionComponent = () => (
-    <div className={styles.root}>
-        <img className={styles.image} src={logo} />
-    </div>
-);
+const PagePreloader: React.FunctionComponent = () => <Preloader imageClassName={imageClassName} />;
 
-PagePreloader.displayName = `Preloader from "${__filename}"`;
+PagePreloader.displayName = `PagePreloader from "${__filename}"`;
 
 export default PagePreloader;

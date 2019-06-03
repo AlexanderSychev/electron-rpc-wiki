@@ -1,0 +1,4 @@
+{
+    "name": "interface TaskBody<A, R>",
+    "to": "./task-body"
+}

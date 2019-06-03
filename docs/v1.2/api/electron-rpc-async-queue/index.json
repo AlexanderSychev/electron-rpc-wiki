@@ -1,0 +1,8 @@
+{
+    "to": "./",
+    "name": {
+        "en-US": "Package \"electron-rpc-async-queue\"",
+        "ru-RU": "Пакет \"electron-rpc-async-queue\""
+    },
+    "subItems": ["./task-body.json", "./task-result.json", "./async-queue.json"]
+}

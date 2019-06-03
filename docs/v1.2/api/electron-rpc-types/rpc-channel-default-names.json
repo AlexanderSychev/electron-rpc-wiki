@@ -1,0 +1,4 @@
+{
+    "name": "const enum RpcChannelDefaultNames",
+    "to": "./rpc-channel-default-names"
+}

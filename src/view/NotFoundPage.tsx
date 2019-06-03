@@ -2,7 +2,7 @@ import * as React from 'react';
 import { style } from 'typestyle';
 
 import { AppContext } from '@context';
-import notFoundPage from '@data/notFoundPage';
+import { dictionary } from '@data';
 
 const styles = {
     wrap: style({
@@ -24,8 +24,8 @@ const NotFoundPage: React.FunctionComponent = () => {
         <React.Fragment>
             <div className={styles.wrap}>
                 <section className={styles.root}>
-                    <h1>{notFoundPage.title.get(locale)}</h1>
-                    <p>{notFoundPage.message.get(locale)}</p>
+                    <h1>{dictionary.PAGE_404_TITLE.get(locale)}</h1>
+                    <p>{dictionary.PAGE_404_MESSAGE.get(locale)}</p>
                 </section>
             </div>
         </React.Fragment>
