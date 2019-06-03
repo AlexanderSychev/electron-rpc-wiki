@@ -2,3 +2,4 @@ node_modules/
 .yarnrc
 docs/electron-rpc-wiki.js
 docs/index.html
+docs/**/menu.json
