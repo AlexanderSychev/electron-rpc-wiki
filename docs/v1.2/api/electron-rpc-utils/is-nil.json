@@ -1,0 +1,5 @@
+{
+    "to": "./is-nil",
+    "name": "isNil",
+    "tags": ["function"]
+}

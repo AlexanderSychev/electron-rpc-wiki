@@ -6,6 +6,7 @@ import { style } from 'typestyle';
 import Arrow from './Arrow';
 import { AppContext } from '@context';
 import { MenuItem, NameDictionary } from '@data';
+import Tag from '@view/Tag';
 
 export interface ItemProps extends MenuItem {
     level: number;
@@ -81,6 +82,16 @@ const styles = {
             },
         },
     }),
+    label: style({
+        overflow: 'hidden',
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        maxWidth: 'calc(100% - 28px)',
+    }),
+    tag: style({
+        marginLeft: '4px',
+    }),
 };
 
 interface Behavior {
@@ -108,7 +119,7 @@ const useBehavior = (level: number, name: NameDictionary | string): Behavior => 
     return { isExpanded, label, rootStyle, onSwitchExpand };
 };
 
-const Item: React.FunctionComponent<ItemProps> = ({ to, name, level, exact, subItems = [] }) => {
+const Item: React.FunctionComponent<ItemProps> = ({ to, name, level, exact, tags = [], subItems = [] }) => {
     const { rootStyle, label, isExpanded, onSwitchExpand } = useBehavior(level, name);
     return (
         <React.Fragment>
@@ -124,7 +135,11 @@ const Item: React.FunctionComponent<ItemProps> = ({ to, name, level, exact, subI
                     className={styles.arrow}
                     iconOpenedClassName={styles.iconOpenedClassName}
                 />
-                <span>{label}</span>
+                <div className={styles.label}>
+                    {label}
+
+                    {tags.length > 0 && tags.map(tag => <Tag className={styles.tag} uniqueName={tag} key={tag} />)}
+                </div>
             </NavLink>
             {subItems.length > 0 && (
                 <div className={classnames(styles.subs, isExpanded && styles.subsExpanded)}>

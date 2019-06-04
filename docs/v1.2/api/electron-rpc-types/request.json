@@ -1,4 +1,5 @@
 {
-    "name": "interface Request<A>",
-    "to": "./request"
+    "name": "Request<A>",
+    "to": "./request",
+    "tags": ["generic", "interface"]
 }

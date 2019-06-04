@@ -1,4 +1,5 @@
 {
-    "name": "interface Envelope",
-    "to": "./envelope"
+    "name": "Envelope",
+    "to": "./envelope",
+    "tags": ["interface"]
 }

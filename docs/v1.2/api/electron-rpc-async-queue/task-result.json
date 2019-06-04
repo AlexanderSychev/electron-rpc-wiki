@@ -1,4 +1,5 @@
 {
-    "name": "interface TaskResult<A, R>",
-    "to": "./task-result"
+    "name": "TaskResult<A, R>",
+    "to": "./task-result",
+    "tags": ["generic", "interface"]
 }

@@ -20,11 +20,14 @@ const fixLink = (href: string) => {
     let result = href.slice(1);
 
     if (result.startsWith('./')) {
-        result = `${window.location.hash.slice(1)}/${result.slice(2)}`;
+        result = `${location.hash.slice(1)}/${result.slice(2)}`;
     }
 
     return result;
 };
+
+const isExternal = (href: string) =>
+    (href.startsWith('http://') || href.startsWith('https://')) && !href.startsWith(location.origin);
 
 const Link: React.FunctionComponent<LinkProps> = ({ children, href }) =>
     href && href.startsWith('#') ? (
@@ -32,7 +35,7 @@ const Link: React.FunctionComponent<LinkProps> = ({ children, href }) =>
             {children}
         </ReactRouterLink>
     ) : (
-        <a className={rootClass} href={href}>
+        <a className={rootClass} href={href} target={href && isExternal(href) ? '_blank' : undefined}>
             {children}
         </a>
     );

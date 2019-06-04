@@ -9,6 +9,7 @@ import TableCell from './TableCell';
 import Link from './Link';
 
 export interface MarkdownProps {
+    className?: string;
     source?: string;
 }
 
@@ -22,8 +23,8 @@ const renderers = {
 };
 
 /** Markdown component with styles */
-const Markdown: React.FunctionComponent<MarkdownProps> = ({ source }) => (
-    <ReactMarkdown source={source} renderers={renderers} />
+const Markdown: React.FunctionComponent<MarkdownProps> = ({ className, source }) => (
+    <ReactMarkdown className={className} source={source} renderers={renderers} />
 );
 
 Markdown.displayName = `Markdown from "${__filename}"`;

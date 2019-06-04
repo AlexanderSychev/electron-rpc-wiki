@@ -1,0 +1,5 @@
+{
+    "to": "./set-request-logger",
+    "name": "setRequestLogger",
+    "tags": ["public", "method"]
+}

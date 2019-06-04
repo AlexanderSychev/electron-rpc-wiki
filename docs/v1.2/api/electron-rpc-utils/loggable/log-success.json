@@ -1,0 +1,5 @@
+{
+    "to": "./log-success",
+    "name": "logSuccess",
+    "tags": ["protected", "method"]
+}

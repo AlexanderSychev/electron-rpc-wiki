@@ -1,4 +1,5 @@
 {
-    "name": "interface ErrorLoggingFunction",
-    "to": "./error-logging-function"
+    "name": "ErrorLoggingFunction",
+    "to": "./error-logging-function",
+    "tags": ["interface"]
 }

@@ -1,4 +1,5 @@
 {
-    "name": "interface SuccessLoggingFunction",
-    "to": "./success-logging-function"
+    "name": "SuccessLoggingFunction",
+    "to": "./success-logging-function",
+    "tags": ["interface"]
 }

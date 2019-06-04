@@ -1,0 +1,8 @@
+{
+    "to": "./",
+    "name": {
+        "en-US": "Package \"electron-rpc-server\"",
+        "ru-RU": "Пакет \"electron-rpc-server\""
+    },
+    "subItems": ["./server"]
+}

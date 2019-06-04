@@ -1,4 +1,5 @@
 {
-    "name": "interface Resolver",
-    "to": "./resolver"
+    "name": "Resolver",
+    "to": "./resolver",
+    "tags": ["interface"]
 }

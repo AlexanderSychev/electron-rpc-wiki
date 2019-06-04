@@ -1,0 +1,5 @@
+{
+    "to": "./set-error-logger",
+    "name": "setErrorLogger",
+    "tags": ["public", "method"]
+}

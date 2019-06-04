@@ -1,0 +1,6 @@
+{
+    "name": "Server",
+    "to": "./",
+    "tags": ["class"],
+    "subItems": ["./start.json", "./stop.json", "./extend-resolver.json"]
+}

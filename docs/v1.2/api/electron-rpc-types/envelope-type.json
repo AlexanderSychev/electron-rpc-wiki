@@ -1,4 +1,5 @@
 {
-    "name": "const enum EnvelopeType",
-    "to": "./envelope-type"
+    "name": "EnvelopeType",
+    "to": "./envelope-type",
+    "tags": ["const", "enum"]
 }

@@ -1,0 +1,5 @@
+{
+    "to": "./start",
+    "name": "start",
+    "tags": ["public", "method"]
+}

@@ -1,4 +1,5 @@
 {
-    "name": "const enum RpcChannelDefaultNames",
-    "to": "./rpc-channel-default-names"
+    "name": "RpcChannelDefaultNames",
+    "to": "./rpc-channel-default-names",
+    "tags": ["const", "enum"]
 }

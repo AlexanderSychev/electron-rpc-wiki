@@ -1,4 +1,5 @@
 import { Locale } from '@context';
+import { CSSProperties } from 'react';
 
 export interface Article {
     name: string;
@@ -17,6 +18,19 @@ export interface MenuItem {
     to: string;
     /** Strict URL checking */
     exact?: boolean;
+    /** Menu item tags */
+    tags?: string[];
     /** Child menu items */
     subItems?: MenuItem[];
+}
+
+export interface Tag {
+    /** Tag's unique name (identifier) */
+    uniqueName: string;
+    /** Translatable tag name (to display at title) */
+    name: string | Map<Locale, string>;
+    /** Non translatable tag name (to display at DOM) */
+    label: string;
+    /** Tag generated class name (by "typestyle") */
+    style: string;
 }
