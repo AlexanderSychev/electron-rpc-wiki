@@ -9,6 +9,7 @@ const sh = require('react-syntax-highlighter/dist/cjs/languages/hljs/bash').defa
 Light.registerLanguage('typescript', typescript);
 Light.registerLanguage('javascript', javascript);
 Light.registerLanguage('sh', sh);
+Light.registerLanguage('bash', sh);
 
 /** "CodeRenderer" component properties */
 export interface CodeRendererProps {

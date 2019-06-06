@@ -5,6 +5,7 @@
         "ru-RU": "Пакет \"electron-rpc-types\""
     },
     "subItems": [
+        "./newable.json",
         "./resolver.json",
         "./rpc-channel-default-names.json",
         "./envelope-type.json",

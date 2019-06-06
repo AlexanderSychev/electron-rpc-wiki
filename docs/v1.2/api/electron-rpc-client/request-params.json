@@ -1,0 +1,5 @@
+{
+    "to": "./request-params",
+    "name": "RequestParams<A>",
+    "tags": ["generic", "interface"]
+}

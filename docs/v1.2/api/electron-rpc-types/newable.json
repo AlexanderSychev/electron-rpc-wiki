@@ -1,0 +1,5 @@
+{
+    "to": "./newable",
+    "name": "Newable<T>",
+    "tags": ["generic", "interface"]
+}

@@ -1,0 +1,8 @@
+{
+    "to": "./",
+    "name": {
+        "en-US": "Package \"electron-rpc-client-services\"",
+        "ru-RU": "Пакет \"electron-rpc-client-services\""
+    },
+    "subItems": ["./service.json", "./procedure.json", "./service-procedure.json", "./factory"]
+}

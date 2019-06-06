@@ -1,0 +1,5 @@
+{
+    "to": "./controller",
+    "name": "Controller",
+    "tags": ["decorator"]
+}

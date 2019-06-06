@@ -1,0 +1,5 @@
+{
+    "to": "./blocking",
+    "name": "blocking<A, R>",
+    "tags": ["generic", "method"]
+}

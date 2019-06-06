@@ -19,7 +19,7 @@ const styles = {
     }),
     content: style({
         position: 'relative',
-        left: '-300px',
+        left: '-330px',
         display: 'inline-block',
         width: '100%',
         height: '100%',
@@ -31,17 +31,17 @@ const styles = {
         whiteSpace: 'normal',
     }),
     contentExpanded: style({
-        width: 'calc(100% - 300px)',
+        width: 'calc(100% - 330px)',
         left: 0,
     }),
     treeMenu: style({
         display: 'inline-block',
         position: 'relative',
-        width: '300px',
+        width: '330px',
         height: '100%',
         overflowX: 'hidden',
         overflowY: 'auto',
-        left: '-300px',
+        left: '-330px',
         transition: 'left .25s ease-out',
     }),
     treeMenuExpanded: style({

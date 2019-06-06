@@ -1,0 +1,6 @@
+{
+    "to": "./",
+    "name": "Factory",
+    "tags": ["class"],
+    "subItems": ["./create-service.json"]
+}

@@ -1,0 +1,5 @@
+{
+    "to": "./create-service",
+    "name": "createService<T>",
+    "tags": ["generic", "method"]
+}
