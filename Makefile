@@ -1,9 +1,9 @@
 NODE_MODULES_TOP = ./node_modules
 NODE_BINS = $(NODE_MODULES_TOP)/.bin
 
-.PHONY: all clean comb lint types build page menu
+.PHONY: all clean comb lint types build page sitemap
 
-all: clean comb lint types build page menu
+all: clean comb lint types build page sitemap
 
 clean:
 	rm -f ./docs/electron-rpc-wiki.js
@@ -24,5 +24,5 @@ build:
 page:
 	node ./pug.js ./src/index.pug ./docs/index.html
 
-menu:
-	node ./generateMenu.js
+sitemap:
+	node ./sitemapGenerator

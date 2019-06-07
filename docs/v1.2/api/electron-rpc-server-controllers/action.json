@@ -1,5 +1,4 @@
 {
-    "to": "./action",
     "name": "Action",
     "tags": ["decorator"]
 }

@@ -1,5 +1,4 @@
 {
     "name": "RequestLoggingFunction",
-    "to": "./request-logging-function",
     "tags": ["interface"]
 }

@@ -1,8 +1,6 @@
 {
-    "to": "./",
     "name": {
         "en-US": "Package \"electron-rpc-server-controllers\"",
         "ru-RU": "Пакет \"electron-rpc-server-controllers\""
-    },
-    "subItems": ["./controller.json", "./action.json", "./bind-controllers-to-server.json"]
+    }
 }

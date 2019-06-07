@@ -1,5 +1,4 @@
 {
-    "to": "./set-success-logger",
     "name": "setSuccessLogger",
     "tags": ["public", "method"]
 }

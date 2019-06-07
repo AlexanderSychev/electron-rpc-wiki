@@ -1,5 +1,4 @@
 {
-    "to": "./get-controller-method-name",
     "name": "getControllerMethodName",
     "tags": ["function"]
 }

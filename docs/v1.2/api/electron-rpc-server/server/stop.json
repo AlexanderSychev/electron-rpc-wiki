@@ -1,5 +1,4 @@
 {
-    "to": "./stop",
     "name": "stop",
     "tags": ["public", "method"]
 }

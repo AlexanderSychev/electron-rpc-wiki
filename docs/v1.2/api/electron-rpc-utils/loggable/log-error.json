@@ -1,5 +1,4 @@
 {
-    "to": "./log-error",
     "name": "logError",
     "tags": ["protected", "method"]
 }

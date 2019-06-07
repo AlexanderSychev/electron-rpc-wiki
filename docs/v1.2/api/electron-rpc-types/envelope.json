@@ -1,5 +1,4 @@
 {
     "name": "Envelope",
-    "to": "./envelope",
     "tags": ["interface"]
 }

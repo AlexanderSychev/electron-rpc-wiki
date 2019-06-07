@@ -1,5 +1,4 @@
 {
     "name": "AsyncQueue",
-    "to": "./async-queue",
     "tags": ["class"]
 }

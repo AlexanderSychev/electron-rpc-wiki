@@ -1,5 +1,4 @@
 {
-    "to": "./bind-controllers-to-server",
     "name": "bindControllersToServer",
     "tags": ["function"]
 }

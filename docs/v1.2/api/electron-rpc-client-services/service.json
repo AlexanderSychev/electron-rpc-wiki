@@ -1,5 +1,4 @@
 {
-    "to": "./service",
     "name": "Service",
     "tags": ["decorator"]
 }

@@ -1,5 +1,4 @@
 {
     "name": "ChannelsNamesProperties",
-    "to": "./channels-names-properties",
     "tags": ["interface"]
 }

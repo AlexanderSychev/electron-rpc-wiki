@@ -1,16 +1,7 @@
 {
-    "to": "./",
+    "redirectTo": "./electron-rpc-server",
     "name": {
         "en-US": "API reference",
         "ru-RU": "Справочник по API"
-    },
-    "subItems": [
-        "./electron-rpc-server",
-        "./electron-rpc-client",
-        "./electron-rpc-server-controllers",
-        "./electron-rpc-client-services",
-        "./electron-rpc-async-queue",
-        "./electron-rpc-types",
-        "./electron-rpc-utils"
-    ]
+    }
 }

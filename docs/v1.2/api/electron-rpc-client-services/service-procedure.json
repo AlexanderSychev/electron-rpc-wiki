@@ -1,5 +1,4 @@
 {
-    "to": "./service-procedure",
     "name": "ServiceProcedure<A, R>",
     "tags": ["generic", "interface"]
 }

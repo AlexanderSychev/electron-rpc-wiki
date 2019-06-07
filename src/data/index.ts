@@ -1,4 +1,4 @@
-export { Article, MenuItem, NameDictionary, Tag } from './types';
+export { Article, MenuItem, NameDictionary, Tag, Sitemap, SitemapItem } from './types';
 
 import dictionary from './dictionary';
 export { dictionary };
@@ -6,8 +6,8 @@ export { dictionary };
 import ArticleLoader from './ArticleLoader';
 export { ArticleLoader };
 
-import MenuLoader from './MenuLoader';
-export { MenuLoader };
-
 import tags from './tags';
 export { tags };
+
+import SitemapLoader from './SitemapLoader';
+export { SitemapLoader };

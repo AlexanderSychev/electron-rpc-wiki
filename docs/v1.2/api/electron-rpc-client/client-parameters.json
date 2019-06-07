@@ -1,5 +1,4 @@
 {
-    "to": "./client-parameters",
     "name": "ClientParameters",
     "tags": ["interface"]
 }

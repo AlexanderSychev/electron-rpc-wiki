@@ -1,13 +1,4 @@
 {
-    "to": "./",
     "name": "Loggable",
-    "tags": ["abstract", "class"],
-    "subItems": [
-        "./set-request-logger.json",
-        "./set-success-logger.json",
-        "./set-error-logger.json",
-        "./log-request.json",
-        "./log-success.json",
-        "./log-error.json"
-    ]
+    "tags": ["abstract", "class"]
 }

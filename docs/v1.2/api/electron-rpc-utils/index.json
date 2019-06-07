@@ -1,8 +1,6 @@
 {
-    "to": "./",
     "name": {
         "en-US": "Package \"electron-rpc-utils\"",
         "ru-RU": "Пакет \"electron-rpc-utils\""
-    },
-    "subItems": ["./is-nil.json", "./resolve.json", "./get-controller-method-name.json", "./loggable"]
+    }
 }

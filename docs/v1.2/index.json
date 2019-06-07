@@ -1,6 +1,6 @@
 {
-    "to": "./",
     "exact": true,
+    "isNotRoot": true,
     "name": {
         "en-US": "Home",
         "ru-RU": "Главная"

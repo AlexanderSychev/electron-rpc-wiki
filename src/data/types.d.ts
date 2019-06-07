@@ -10,12 +10,31 @@ export interface NameDictionary {
     [locale: string]: string;
 }
 
+/** Sitemap item signature */
+export interface SitemapItem {
+    /** Menu items tree-like array */
+    tree: MenuItem[];
+    /** Menu items URL index (for simple searching) */
+    index: {
+        [url: string]: number[];
+    };
+}
+
+/** Sitemap signature */
+export interface Sitemap {
+    [version: string]: SitemapItem;
+}
+
 /** Menu item signature */
 export interface MenuItem {
     /** Name variants by locales or single name */
     name: NameDictionary | string;
     /** Target URL */
     to: string;
+    /** Redirection URL */
+    redirectTo?: string;
+    /** Available Markdown files to load */
+    files?: NameDictionary;
     /** Strict URL checking */
     exact?: boolean;
     /** Menu item tags */

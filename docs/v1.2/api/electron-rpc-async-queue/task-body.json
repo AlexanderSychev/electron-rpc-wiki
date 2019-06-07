@@ -1,5 +1,4 @@
 {
     "name": "TaskBody<A, R>",
-    "to": "./task-body",
     "tags": ["generic", "interface"]
 }

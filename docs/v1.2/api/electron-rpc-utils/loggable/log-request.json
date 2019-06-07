@@ -1,5 +1,4 @@
 {
-    "to": "./log-request",
     "name": "logRequest",
     "tags": ["protected", "method"]
 }

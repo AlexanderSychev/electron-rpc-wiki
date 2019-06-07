@@ -2,10 +2,8 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { style } from 'typestyle';
 
-import { AppContext } from '@context';
-import { MenuLoader, MenuItem } from '@data';
+import { AppContext, SitemapContext } from '@context';
 import Item from './Item';
-import MenuPreloader from '@view/MenuPreloader';
 
 const styles = {
     root: style({
@@ -26,24 +24,16 @@ export interface TreeMenuProps {
 
 const useBehavior = () => {
     const { version } = React.useContext(AppContext);
-    const [menu, setMenu] = React.useState<MenuItem[]>([]);
-    const [isLoading, setIsLoading] = React.useState(true);
-    React.useEffect(() => {
-        MenuLoader.getInstance()
-            .loadMenu(version)
-            .then(menu => {
-                setMenu(menu);
-                setIsLoading(false);
-            });
-    }, [version]);
-    return { isLoading, menu };
+    const sitemap = React.useContext(SitemapContext);
+    return sitemap[version] ? sitemap[version].tree : [];
 };
 
 const TreeMenu: React.FunctionComponent<TreeMenuProps> = ({ className }) => {
-    const { menu, isLoading } = useBehavior();
     return (
         <div className={classnames(styles.root, className)}>
-            {isLoading ? <MenuPreloader /> : menu.map((item, index) => <Item {...item} level={0} key={`0_${index}`} />)}
+            {useBehavior().map((item, index) => (
+                <Item {...item} level={0} key={`0_${index}`} />
+            ))}
         </div>
     );
 };

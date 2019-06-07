@@ -1,5 +1,4 @@
 {
-    "to": "./extend-resolver",
     "name": "extendResolver",
     "tags": ["public", "method"]
 }

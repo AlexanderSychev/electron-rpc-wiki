@@ -1,5 +1,4 @@
 {
     "name": "Response<R>",
-    "to": "./response",
     "tags": ["generic", "interface"]
 }

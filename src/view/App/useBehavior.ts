@@ -1,11 +1,28 @@
 import * as React from 'react';
 
 import { Locale, ContextData, LocalStorageManager } from '@context';
+import { Sitemap, SitemapLoader } from '@data';
 
-const useBehavior = (): ContextData => {
+export interface Behavior {
+    context: ContextData;
+    isSitemapLoading: boolean;
+    sitemap: Sitemap;
+}
+
+const useBehavior = (): Behavior => {
     const [locale, setLocaleState] = React.useState<Locale>(LocalStorageManager.getInstance().getLocale);
     const [version, setVersionState] = React.useState<string>(LocalStorageManager.getInstance().getVersion);
     const [isMenuExpanded, setIsMenuExpanded] = React.useState<boolean>(true);
+    const [isSitemapLoading, setIsSitemapLoading] = React.useState<boolean>(true);
+    const [sitemap, setSitemap] = React.useState<Sitemap>({});
+    React.useEffect(() => {
+        SitemapLoader.getInstance()
+            .load()
+            .then(sitemap => {
+                setSitemap(sitemap);
+                setIsSitemapLoading(false);
+            });
+    }, []);
     const setLocale = React.useCallback(
         (locale: Locale) => {
             setLocaleState(locale);
@@ -20,11 +37,16 @@ const useBehavior = (): ContextData => {
         },
         [setVersionState, LocalStorageManager.getInstance().setVersion],
     );
-    const value: ContextData = React.useMemo(
+    const context: ContextData = React.useMemo(
         () => ({ isMenuExpanded, locale, version, setIsMenuExpanded, setLocale, setVersion }),
         [locale, version, isMenuExpanded, setIsMenuExpanded, setLocale, setVersion],
     );
-    return value;
+    const result: Behavior = React.useMemo(() => ({ context, isSitemapLoading, sitemap }), [
+        context,
+        isSitemapLoading,
+        sitemap,
+    ]);
+    return result;
 };
 
 export default useBehavior;

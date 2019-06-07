@@ -1,5 +1,4 @@
 {
-    "to": "./nonblocking",
     "name": "nonblocking<A, R>",
     "tags": ["generic", "method"]
 }
