@@ -1,5 +1,6 @@
 {
     "redirectTo": "./electron-rpc-server",
+    "sortIndex": 1,
     "name": {
         "en-US": "API reference",
         "ru-RU": "Справочник по API"

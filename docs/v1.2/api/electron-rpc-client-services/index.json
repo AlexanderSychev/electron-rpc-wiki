@@ -1,4 +1,5 @@
 {
+    "sortIndex": 3,
     "name": {
         "en-US": "Package \"electron-rpc-client-services\"",
         "ru-RU": "Пакет \"electron-rpc-client-services\""

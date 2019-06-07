@@ -35,7 +35,7 @@ const mapPage = async (pagePath, versionDir) => {
 
     const { name: filename, dir: dirname } = path.parse(pagePath);
 
-    const { name, isNotRoot, tags, redirectTo, exact } = await readJson(pagePath);
+    const { name, isNotRoot, tags, redirectTo, exact, sortIndex = 0 } = await readJson(pagePath);
     const files = !redirectTo ? await getMarkdownFiles(path.join(dirname, filename)) : undefined;
     let to = '/' + path.relative(versionDir, dirname);
     if (filename !== 'index') {
@@ -48,11 +48,18 @@ const mapPage = async (pagePath, versionDir) => {
         isNotRoot,
         to,
         exact,
+        sortIndex,
         redirectTo: redirectTo ? path.resolve(to, redirectTo) : undefined,
     };
 
     return result;
 };
+
+/**
+ * @param {*[]} items
+ * @return {*[]}
+ */
+const sortItems = items => items.sort((a, b) => a.sortIndex - b.sortIndex);
 
 const mapDir = async (dir, versionDir = dir) => {
     const subs = (await readdir(dir)).filter(sub => !sub.endsWith('.md')).map(sub => path.join(dir, sub));
@@ -81,13 +88,13 @@ const mapDir = async (dir, versionDir = dir) => {
     if (index) {
         const indexData = await mapPage(index, versionDir);
         if (indexData.isNotRoot) {
-            return [omit(indexData, 'isNotRoot'), ...concretesDatas, ...subdirsDatas];
+            return sortItems([omit(indexData, 'isNotRoot'), ...concretesDatas, ...subdirsDatas]);
         } else {
-            indexData.subItems = [...concretesDatas, ...subdirsDatas];
+            indexData.subItems = sortItems([...concretesDatas, ...subdirsDatas]);
             return omit(indexData, 'isNotRoot');
         }
     } else {
-        return [...concretesDatas, ...subdirsDatas];
+        return sortItems([...concretesDatas, ...subdirsDatas]);
     }
 };
 
