@@ -22,7 +22,7 @@ const App: React.FunctionComponent = () => {
                         <Switch>
                             <Route path="/" component={MainPage} exact />
                             <Redirect from="/api" to="/api/electron-rpc-server" exact />
-                            <Route path="/api/:sections+" component={ApiPage} />
+                            <Route path="/:sections+" component={ApiPage} />
                             <Route component={NotFoundPage} />
                         </Switch>
                     </Page>

@@ -16,14 +16,3 @@ export class MyClass extends Loggable {
     }
 }
 ```
-
-### Methods:
-
--   public
-    -   [`setRequestLogger`](#./set-request-logger)
-    -   [`setSuccessLogger`](#./set-success-logger)
-    -   [`setErrorLogger`](#./set-error-logger)
--   protected
-    -   [`logRequest`](#./log-request)
-    -   [`logSuccess`](#./log-success)
-    -   [`logError`](#./log-error)

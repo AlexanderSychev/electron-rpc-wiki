@@ -12,11 +12,3 @@ npm install electron-rpc-async-queue --save
 # Или через Yarn
 yarn add electron-rpc-async-queue --save
 ```
-
-### Компоненты
-
-| Класс, интерфейс                                                           | Описание                                                                                |
-| -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [`interface TaskBody<A, R>`](#/api/electron-rpc-async-queue/task-body)     | Сигнатура функции, которая должна быть поставлена в очередь на выполнение - тело задачи |
-| [`interface TaskResult<A, R>`](#/api/electron-rpc-async-queue/task-result) | Сигнатура результата выполнения задачи                                                  |
-| [`class AsyncQueue`](#/api/electron-rpc-async-queue/async-queue)           | Объект асинхронной очереди                                                              |

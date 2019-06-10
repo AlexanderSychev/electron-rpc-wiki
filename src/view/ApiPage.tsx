@@ -17,7 +17,7 @@ const ApiPage: React.FunctionComponent<RouteComponentProps<RouteData>> = ({
         params: { sections },
     },
 }) => {
-    const { isLoading, hasError, errorType, content } = useArticle(`/api/${sections}`);
+    const { isLoading, hasError, errorType, content } = useArticle(`/${sections}`);
 
     const pageNotFound = !isLoading && hasError && errorType === 'not_found';
     const unknownError = !isLoading && hasError && errorType === 'unknown';
