@@ -24,7 +24,7 @@ module.exports = {
     // остальная конфигурация
     // ...
     entry: ['reflect-metadata', './src/index.js'],
-}
+};
 ```
 
 # Установка

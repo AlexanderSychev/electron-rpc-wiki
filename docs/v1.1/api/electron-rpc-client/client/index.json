@@ -1,0 +1,5 @@
+{
+    "name": "Client",
+    "tags": ["class"],
+    "subItems": ["./request.json", "./nonblocking.json", "./blocking.json"]
+}

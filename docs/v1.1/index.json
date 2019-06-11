@@ -1,4 +1,6 @@
 {
+    "exact": true,
+    "isNotRoot": true,
     "sortIndex": 0,
     "name": {
         "en-US": "Home",

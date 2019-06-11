@@ -1,0 +1,8 @@
+{
+    "sortIndex": 1,
+    "name": {
+        "en-US": "Package \"electron-rpc-client\"",
+        "ru-RU": "Пакет \"electron-rpc-client\""
+    },
+    "subItems": ["./client-parameters.json", "./request-params.json", "./client"]
+}
